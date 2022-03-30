@@ -1,7 +1,11 @@
 type ValueConstructor<S> = (new (
   value: RuntimeShape<S>
 ) => ValueInstance<S>) & {
-  deserialize(serialized: SerializedShape<S>): ValueInstance<S>;
+  deserialize<T extends ValueConstructor<S>>(
+    this: T,
+    serialized: SerializedShape<S>
+  ): InstanceType<T>;
+  shape: S;
 };
 
 type ValueInstance<S> = {
@@ -117,8 +121,9 @@ function deserialize<S extends any>(
   return deserialized;
 }
 
-export function Value<S>(shape: S) {
-  abstract class Intermediate {
+export function Value<S>(shape: S): ValueConstructor<S> {
+  class Intermediate implements ValueInstance<S> {
+    static shape = shape;
     constructor(public readonly value: RuntimeShape<S>) {}
 
     serialize(): SerializedShape<S> {
