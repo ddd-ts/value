@@ -1,0 +1,14 @@
+{
+  "name": "@ddd-ts/value",
+  "description": "Typesafe definitions for your value objects",
+  "version": "0.0.1",
+  "main": "src/value.ts",
+  "author": "Elies Lou - Aetherall",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3"
+  }
+}
