@@ -1,7 +1,7 @@
 {
   "name": "@ddd-ts/value",
   "description": "Typesafe definitions for your value objects",
-  "version": "0.0.3-0",
+  "version": "0.0.3-1",
   "main": "src/value.ts",
   "author": "Elies Lou - Aetherall",
   "license": "MIT",
