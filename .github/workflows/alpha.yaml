@@ -1,8 +1,9 @@
-name: Release
+name: Alpha
 
 on:
-  release:
-    types: [created]
+  push:
+    branches-ignore:
+      - main
 
 jobs:
   publish:
@@ -16,6 +17,7 @@ jobs:
           scope: "@ddd-ts"
       - run: yarn
       - run: yarn build
-      - run: yarn publish --no-git-tag-version
+      - run: echo "SHORT_SHA=`git rev-parse --short HEAD`" >> $GITHUB_ENV
+      - run: yarn publish --no-git-tag-version --new-version 0.0.0-feat.${{ github.ref_name }}.${SHORT_SHA}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
