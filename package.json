@@ -6,7 +6,7 @@
   "author": "Elies Lou - Aetherall",
   "license": "MIT",
   "scripts": {
-    "test": "yarn jest",
+    "test": "jest",
     "build": "tsc"
   },
   "devDependencies": {
