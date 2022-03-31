@@ -1,0 +1,10 @@
+# CI
+.github
+
+# Sources
+src
+
+# Configs
+jest.config.js
+tsconfig.json
+yarn.lock

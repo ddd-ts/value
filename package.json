@@ -1,12 +1,12 @@
 {
   "name": "@ddd-ts/value",
   "description": "Typesafe definitions for your value objects",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "src/value.ts",
   "author": "Elies Lou - Aetherall",
   "license": "MIT",
   "scripts": {
-    "test": "yarn jest",
+    "test": "jest",
     "build": "tsc"
   },
   "devDependencies": {
